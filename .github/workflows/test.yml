@@ -4,7 +4,8 @@ on: [pull_request]
 
 env:
   # Ultimately, this could be set by reading a file
-  stable_branches: '3.4.x 3.3.x 3.2.x'
+  # TODO remove master, only added to validate CI
+  stable_branches: '3.4.x 3.3.x 3.2.x master'
 
 jobs:
   test:
