@@ -4,7 +4,7 @@ on: [pull_request]
 
 env:
   # Ultimately, this could be set by reading a file
-  stable_branches: [3.4.x 3.3.x 3.2.x]
+  stable_branches: '3.4.x 3.3.x 3.2.x'
 
 jobs:
   test:
@@ -34,5 +34,5 @@ jobs:
       - name: Test
         run: sbt ++${{ matrix.scala }} test
       - name: Binary compatibility (stable branch only)
-        if: contains(${{ env.stable_branches }}, github.ref)
+        if: contains(env.stable_branches, github.ref)
         run: sbt ++${{ matrix.scala }} mimaReportBinaryIssues
