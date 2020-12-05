@@ -5,7 +5,7 @@ on: [pull_request]
 env:
   # Ultimately, this could be set by reading a file
   # TODO remove master, only added to validate CI
-  stable_branches: '3.4.x 3.3.x 3.2.x master'
+  stable_branches: 'refs/heads/3.4.x refs/heads/3.3.x refs/heads/3.2.x refs/heads/master'
 
 jobs:
   test:
